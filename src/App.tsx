@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { LogIn } from "./components/useEffect";
+import { Counter } from "./components/useReducer";
+import { LogButtonClicks } from "./components/useRef";
+import { LoggedIn } from "./components/useState";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div>
+        useState
+        <p />
+        <LoggedIn />
+      </div>
+      <p />
+      <div>
+        useReducer
+        <p />
+        <Counter />
+      </div>
+      <div>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          useEffect
+          <LogIn />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div>
+        <p>
+          useRef
+          <LogButtonClicks />
+        </p>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
