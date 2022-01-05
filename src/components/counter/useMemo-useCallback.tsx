@@ -6,14 +6,13 @@ import SalaryButton from "./salaryButton";
 //useCallback is to prevent a component from re-rendering unless its props have changed.
 //useMemo returns a memoized value and useCallback returns a memoized function.
 //useMemo will remember the returned value from your function. useCallback will remember your actual function.
+
 export const AdvancedHooksComponent = () => {
   const [age, setAge] = useState(0);
   const [salary, setSalary] = useState(100);
 
   const memoizedValue = useMemo(() => {
-    let i = 0;
-    while (i < 2000000000) i++;
-    if (age % 2 === 0) return "Even";
+    if ((age * 3) % 2 === 0) return "Even";
     else return "Odd";
   }, [age]);
 

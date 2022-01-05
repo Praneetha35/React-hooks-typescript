@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-export const LogIn = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState<Boolean>(false);
+export const LogIn2 = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<Boolean>(true);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -12,7 +12,7 @@ export const LogIn = () => {
 
   useEffect(() => {
     document.title = isLoggedIn ? "In" : "Out";
-  }, []);
+  });
 
   return (
     <div>

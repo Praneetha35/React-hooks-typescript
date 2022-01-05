@@ -1,10 +1,13 @@
 import "./App.css";
 import { LogIn } from "./components/useEffect";
+import { LogIn1 } from "./components/useEffect1";
+import { LogIn2 } from "./components/useEffect2";
 import { AdvancedHooksComponent } from "./components/counter/useMemo-useCallback";
 import { Counter } from "./components/useReducer";
 import { LogButtonClicks } from "./components/useRef";
 import { LoggedIn } from "./components/useState";
 import { UseContextExample } from "./components/useContext";
+import { UseMemo } from "./components/counter1/useMemo";
 
 const App: React.FC = () => {
   return (
@@ -22,8 +25,16 @@ const App: React.FC = () => {
       </div>
       <div>
         <p>
-          useEffect
+          useEffect-runs once after initial render
           <LogIn />
+        </p>
+        <p>
+          useEffect-runs only after if props/ state changes
+          <LogIn1 />
+        </p>
+        <p>
+          useEffect-runs after every render
+          <LogIn2 />
         </p>
       </div>
       <div>
@@ -33,6 +44,11 @@ const App: React.FC = () => {
           <AdvancedHooksComponent />
           <UseContextExample />
         </p>
+      </div>
+
+      <div>
+        useMemo
+        <UseMemo />
       </div>
     </div>
   );
